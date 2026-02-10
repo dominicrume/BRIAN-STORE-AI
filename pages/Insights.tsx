@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../App';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, CartesianGrid } from 'recharts';
-import { AlertTriangle, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { AlertTriangle, TrendingUp, CheckCircle2, XCircle } from 'lucide-react';
 
 const Insights: React.FC = () => {
-  const { staffMetrics, sales } = useContext(StoreContext);
+  const { staffMetrics, sales, settings } = useContext(StoreContext);
 
   // Prepare Chart Data
   const salesData = [
@@ -24,9 +24,16 @@ const Insights: React.FC = () => {
             <h2 className="text-2xl font-bold text-slate-900">Performance & Risk</h2>
             <p className="text-slate-500">Deep dive into what Brian is seeing.</p>
         </div>
-        <div className="hidden md:flex items-center gap-2 text-xs bg-gray-100 px-3 py-1.5 rounded-full text-gray-500">
-            <CheckCircle2 size={14} className="text-green-500"/> QuickBooks Synced
-        </div>
+        
+        {settings.quickBooksConnected ? (
+             <div className="hidden md:flex items-center gap-2 text-xs bg-green-50 border border-green-100 px-3 py-1.5 rounded-full text-green-700 font-medium">
+                <CheckCircle2 size={14} className="text-green-600"/> QuickBooks Synced
+            </div>
+        ) : (
+             <div className="hidden md:flex items-center gap-2 text-xs bg-gray-100 border border-gray-200 px-3 py-1.5 rounded-full text-gray-500 font-medium">
+                <XCircle size={14} className="text-gray-400"/> Accounting Disconnected
+            </div>
+        )}
       </div>
 
       {/* Sales Forecast Chart */}

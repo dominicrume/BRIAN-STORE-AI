@@ -10,15 +10,15 @@ export const MOCK_PRODUCTS: Product[] = [
 ];
 
 export const MOCK_SALES: Sale[] = [
-  { id: '101', total: 12.50, date: new Date().toISOString(), paymentMethod: 'Mobile Money', items: [] },
-  { id: '102', total: 4.00, date: new Date().toISOString(), paymentMethod: 'Cash', items: [] },
-  { id: '103', total: 22.00, date: new Date(Date.now() - 86400000).toISOString(), paymentMethod: 'Card', items: [] },
+  { id: '101', total: 12.50, date: new Date().toISOString(), paymentMethod: 'Mobile Money', items: [], status: 'COMPLETED' },
+  { id: '102', total: 4.00, date: new Date().toISOString(), paymentMethod: 'Cash', items: [], status: 'COMPLETED' },
+  { id: '103', total: 22.00, date: new Date(Date.now() - 86400000).toISOString(), paymentMethod: 'Card', items: [], status: 'COMPLETED' },
 ];
 
 export const MOCK_ALERTS: Alert[] = [
-  { id: 'a1', type: 'CRITICAL', message: 'Indomie Noodles stock critical (8 units)', timestamp: '10 mins ago', category: 'INVENTORY' },
-  { id: 'a2', type: 'WARNING', message: 'Cash drawer open for > 5 mins without sale', timestamp: '1 hour ago', category: 'STAFF' },
-  { id: 'a3', type: 'INFO', message: 'Delivery from Supplier B expected tomorrow', timestamp: '2 hours ago', category: 'INVENTORY' },
+  { id: 'a1', type: 'CRITICAL', message: 'Indomie Noodles stock critical (8 units)', timestamp: '10 mins ago', category: 'INVENTORY', isRead: false },
+  { id: 'a2', type: 'WARNING', message: 'Cash drawer open for > 5 mins without sale', timestamp: '1 hour ago', category: 'STAFF', isRead: false },
+  { id: 'a3', type: 'INFO', message: 'Delivery from Supplier B expected tomorrow', timestamp: '2 hours ago', category: 'INVENTORY', isRead: true },
 ];
 
 export const MOCK_STAFF: StaffMetric[] = [
