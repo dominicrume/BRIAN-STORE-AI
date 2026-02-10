@@ -1,0 +1,7 @@
+{
+  "name": "Brian Store AI",
+  "description": "Run your store. Anywhere. Without fear. The AI operating system for African retail.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
